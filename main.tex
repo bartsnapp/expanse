@@ -1,6 +1,7 @@
 \documentclass{amsart}
 
 \usepackage{graphicx}
+\usepackage{amsmath}
 \renewcommand{\vec}{\textbf}
 
 \theoremstyle{definition}
@@ -14,12 +15,257 @@
 
 \section{Artificial gravity}
 
-In science fiction, artificial gravity is often generated via centripital acceleration. Usually (due to production limitations) this ``artificial gravity'' is portrayed as being an excellent facsimile for Earth's gravity. However, some writers have discussed the differences between Earth's gravity and the artifical gravity. In the television series \textit{The Expanse}, the dwarf planet Ceres is given an artificial gravity of $0.3g$ (where $g$ is the acceleration due to gravity on Earth). In one scene, a drink is poured and the liquid appears to follow an interesting path due to the artificial gravity:
+In science fiction, artificial gravity for space-craft and
+space-stations is often generated via centripetal acceleration, see
+\cite{2001,2010,missiontomars,themartian,expanse,babylon5,europareport,ringworld?,rama,intersetller,etc}
+for an incomplete list. Usually characters live inside a cylinder that is
+spinning.
+
+IMAGE
+
+Centripetal acceleration pushes them against the outside wall of the
+cylinder.  In television and film, (surely due to production
+limitations) this ``artificial gravity'' is portrayed as being an
+excellent facsimile for Earth's gravity. In this paper we seek to
+answer the question of how accurately centripetal acceleration mimics
+gravitational acceleration.
+
+
+While centripetal acceleration (on cylindrical space-craft etc.) has
+been extensively studied \cite{papers,anotherpaper}, all of these
+studies discuss the problem from a global view-point. Sometimes the
+differences between Earth's gravity and the artificial gravity are
+discussed in science fiction. For example, in the television series
+\textit{The Expanse}, there is a scene, where a drink is poured and
+the liquid appears to follow an interesting path due to the artificial
+gravity:
 
 %https://blogs-images.forbes.com/chadorzel/files/2016/01/output_wSTCkz.gif
 \[
     \includegraphics[width=3in]{pour.png}
 \]
+Is the depiction accurate? In this paper, we seek to understand the
+nature of centripetal acceleration from a local view-point, as observer
+who lives inside the rotating ring.
+
+
+
+
+In order to find out, we will need to solve for the equations of
+motion for free falling objects in Miller's frame. In particular we
+will consider the case of a dropped ball. The most challenging aspect
+of solving for the equations of motion in Miller's frame will be
+determining the frame itself. As you'll see, defining up, down, left
+and right on a spinning spaceship can be quite dizzying (pun
+intended). We will approach the problem in two different ways. The
+first method will take the viewpoint of an outside onlooker and use
+rotation of frames to determine how the ball will fall from Miller's
+perspective. In the second way, we will use the arclength of the ship
+to describe the x direction, while the distance from the ball to the
+center of the ship, minus the ship radius itself describes the height
+of the ball.
+
+\subsection*{Method 1: Rotation of Frames}
+
+From the view of the onlooker, Miller simply rotates around the ship at some angular velocity $\omega$ from a starting angle of $\phi$ from the vertical. Given that the Radius of the ship is $R$, Miller's position can be given by:
+
+\begin{equation}\label{eq:MillerPosition}
+    \vec{m}=R\langle sin(\theta(t)),-cos(\theta (t)\rangle
+\end{equation}
+
+Where $\theta (t)$ is given by:
+
+$$\theta (t) = \omega t + \phi$$
+\[
+    \includegraphics[width=2.9in]{MillerZero.png}
+    \includegraphics[width=3in]{MillerDeltaT.png}
+\]
+
+Meanwhile the ball starts out at some point on the ship: $$\vec{b} = \langle x_0,y_0\rangle $$ moving with an initial velocity:
+
+\[\vec{v}_0 = \vec{b}' = \omega \langle -y_0,x_0\rangle\]
+
+ where $\omega$ is considered positive when rotating counterclockwise.
+    \[
+    \includegraphics[width=3in]{WaterInitial.png}
+    \]
+ Thus the paths that the onlooker will see for Miller and the ball are
+\begin{equation}
+\vec{m}=R\langle \sin(\theta(t)),-\cos(\theta (t)\rangle
+\end{equation}
+
+\begin{equation}\label{eq:BallV1}
+\vec{b} = \langle x_0 - y_0 \omega t, y_0 + x_0 \omega t \rangle
+\end{equation}
+
+\[
+\includegraphics[width=3in]{MillerAndWater.png}
+\]
+
+Now we want to draw a vector from Miller to the ball to find the ball's relative position to Miller. This is just a matter of subtracting Miller's position from the ball's position. We will call this vector $\vec{u}$ where:
+
+\begin{equation}
+    \vec{u}=\vec{b}-\vec{m}
+\end{equation}
+
+\[
+\includegraphics[width=3in]{MillerWaterU.png}
+\]
+
+As shown above, \vec{u} points from Miller to the ball, which is exactly what we want! The only issue is that the vector is still in the eyes of the observer. While the observer has been sitting still in space, Miller's definition of $x$ and $y$ direction has been constantly changing from the observer's perspective.
+
+\[
+\includegraphics[width=1.5in]{MillerAxes.png}   
+\]
+
+In order to view $\vec{u}$ from Miller's frame, we will have to rotate $\vec{u}$ by $-\theta(t)$. This is because in Miller's frame, the observer's world was initially rotated by $-\phi$ and then continued to rotate at $-\omega t$. By a given time $t$, Miller considers the world to have rotated by $-\phi - \omega t$, which just happens to be $-\theta (t)$. Thus, the path that Miller sees the ball take is given by:
+\begin{equation}
+\begin{split}
+        \vec{u}_m & = Rot(-\theta)\vec{u} \\
+        &= \langle (x_0 - \omega t y_0) cos(\theta(t)) + (y_0 + \omega t x0 )sin(\theta (t), \\
+        &R+(\omega t x_0 + y_0)cos(\theta(t))+(\omega t y_0 - x_0)sin(\theta (t)) \rangle    
+\end{split}
+\end{equation}
+
+\subsection*{Method 2: Arclength and Radius}
+In the second method we immediately take the viewpoint of Miller. We consider the arclength between Miller and the ball to be the displacement in the x direction, while the ball's height above the ship floor to be the displacement in the y direction. We'll define the height of the ball above the ship floor as:
+
+\[h = R - r\]
+
+Where $r$ is the ball's distance from the center of the ship. $r$ as a function of time is given as:
+
+\begin{equation}
+\begin{split}
+    r &= \lvert \vec{b} \rvert \\
+    &= \sqrt{(x_0^2+y_0^2)(1+\omega^2 t^2)}
+\end{split}
+\end{equation}
+
+
+The arclength between Miller and the ball is:
+\begin{equation}
+ x = \gamma R
+\end{equation}
+
+Where $\gamma$ is the angle between Miller and the ball.
+
+\[
+\includegraphics[width=3in]{arclengthLabeled.png}
+\]
+
+$\gamma$ can easily be found by using the dot product definition:
+\[\vec{m}\cdot\vec{b}= \lvert \vec{m} \rvert \lvert \vec{b} \rvert cos(\gamma)\]
+
+And taking the arcCosine so that $\gamma$ is:
+\begin{equation}
+\gamma  = arcCos(\frac{\vec{m}\cdot \vec{b}}{\lvert \vec{m} \rvert \lvert \vec{b} \rvert}) 
+ = arcCos (\frac{\vec{m}\cdot \vec{b}}{rR})
+\end{equation}
+
+Thus the equation of motion for the ball that Miller sees is:
+
+\begin{equation}\label{eq:uV1}
+    \vec{u}_{arc} = \langle R cos(\gamma), h \rangle
+\end{equation}
+
+\subsection*{Comparison of Methods 1 and 2 to Real Gravity}
+
+Now that we've derived the equations of motion that a ball would take if dropped from the ship, we can compare their height as a function of time to the height of a ball if dropped on a planet where gravity is (approximately) constant. Our end goal is to determine what kind of situations give realistic gravity from Miller's point of view. The x components for each method are both non-zero as a function of time, which does not line up (pun intended) with a ball dropped on Earth. While this is important, we will not analyze the x component until the next section where we discuss projectile motion. 
+
+The height of a ball dropped on a planet with gravity $g$ with a starting height of $h_0$ is given by:
+\begin{equation}
+    h(t)=\frac{1}{2}gt^2 +h_0
+\end{equation}
+
+Whereas the height of a ball from the ship as a function of time given the rotation of frames method $h_{rot}(t)$ and the arclength method $h_{arc}(t)$ is given by:
+
+\begin{equation}
+    h_{rot}(t) = R+(\omega t x_0 + y_0)cos(\theta(t))+(\omega t y_0 - x_0)sin(\theta (t))
+\end{equation}
+
+\begin{equation}
+    h_{arc}(t) = R - \sqrt{(x_0^2+y_0^2)(1+\omega^2 t^2)} \\
+\end{equation}
+
+In order to compare $h_{arc}(t)$ and $h_{rot}(t)$ to $h(t)$, we need to find the ship's simulated gravity for the ship's given $\omega$ and $R$. Then we will do a Taylor series expansion of $h_{arc}(t)$ and $h_{rot}(t)$ and see how the expansion terms compare to $h(t)$. We should expect the quadratic terms of the expansion to be $\frac{1}{2}gt^2$.
+
+We will consider the gravity of the ship: $g_{ship}$  to be the acceleration that Miller feels at his feet while standing stationary. This is can be found by taking the second derivative of Miller's position with respect to time:
+\begin{equation}
+\begin{split}
+     g_{ship}&=\lvert\vec{m}''(t)\rvert \\
+     &= \frac{d^2}{dt^2}R\lvert \langle sin(\theta(t),-cos(\theta(t)\rangle \rvert \\
+     &=R \omega^2
+\end{split}
+\end{equation}
+
+To simplify the expansion, we assume that  $\phi$ is zero and the ball starts at $\langle x_0,y_0\rangle$ from the center of the ship. Doing a Taylor series expansion on $h_{rot}(t)$ and $h_{arc}(t)$ (with Mathematica) yields:
+\begin{equation}
+\begin{split}
+     h_{rot}(t) &\approx (R+y_0)+\frac{1}{2}\omega^2 y_0 t^2 - \frac{1}{3}\omega^3 x_0 t^3 -\frac{1}{8}\omega^4 y_0 t^4... \\
+     &\approx (r_0)+\frac{1}{2}\omega^2 y_0 t^2 - \frac{1}{3}\omega^3 x_0 t^3 -\frac{1}{8}\omega^4 y_0 t^4...
+\end{split}
+\end{equation}
+
+\begin{equation}
+ h_{arc}(t) \approx h_0 -\frac{1}{2}\omega^2 r_0 t^2 + \frac{1}{8}\omega^4 r_0 t^4 ...
+\end{equation}
+
+From the Taylor series expansion above, we can see that $h_{rot}(t)$ and $h_{arc}(t)$ are extremely similar (identical up to the 4th order assuming $x_0$ is zero) since $g_{ship} = R \omega^2$ and $R+y_0 = h_0$. This makes sense, as the rotation method and arclength method only really begin to differ when $\theta(t)$ becomes large. However, by the time $\theta(t)$ actually becomes large, the ball has long since hit the grown of the ship. While both methods are fine approaches to artificial gravity, we will exclusively use $h_{rot}(t)$ when comparing artificial gravity to planetary gravity. This is because the rotation method is computationally simple (does not require arcCosine) and comparing $h_{rot}(t)$ and $h_{arc}(t)$ along side $h(t)$ is fruitless, as $h_{rot}(t)$ and $h_{arc}(t)$ will appear identical when compared to the second order differences between artificial and planetary gravity. From now on we will define artificial gravity as:
+
+\begin{equation}\label{eq:approxGravHeight}
+\begin{split}
+    h(t)_{approx} &= h(t)_{rot} \\
+    &=R+(\omega t x_0 + y_0)cos(\theta(t))+(\omega t y_0 - x_0)sin(\theta (t))
+\end{split}
+\end{equation}
+
+From the Taylor series expansion We also find that $h_{approx}(t)$ is approximate to real gravity when $r_0 \approx R$! Assuming Miller drops objects (such as pouring water) from eye level, we can now investigate what is "good" artificial gravity. In particular we want to investigate a `Just Noticeable Difference' for objects poured over a distance of 1 meter. According to Weber's law
+
+Making the substitution  and $x_0 =0$ yields an identical 0th and 1st order terms to both $h_{rot}(t)$ and $h_{arc}(t)$. $h_{rot}(t)$ and $h_{arc}(t)$ differ at the 3rd order term for non-zero , but since $x_0$ is zero,  and a near identical 0th and first order term for  when $r_0 \approx R$! 
+
+
+\subsection*{Method 1: Applied to Projectile motion}
+Thus far we have assumed that all objects dropped in artificial gravity are initially at rest. This works well to simply describe what Miller sees when pouring a drink in artificial gravity. However we can explore a rich set of scenarios and situations by deriving the equations of motion for a drink poured with \textit{initial velocity}. In this section we will derive the general equations of motion for a projectile as seen in Miller's frame using the method of rotating frames. We will no longer consider the arc length method because the method requires the use of the arcCosine function (which is unnecessarily complex).
+
+
+Miller's position on the ship is still given by equation \ref{eq:MillerPosition} on page \pageref{eq:MillerPosition}:
+
+\[\vec{m} = R\langle sin(\theta (t) ), - cos (\theta (t) ) \rangle\]
+
+The only change in derivation will be to add an initial velocity term, $\vec{v}_{init}$ to the position function for the ball in equation \ref{eq:BallV1} so that way the ball now has the position function:
+
+\begin{equation}\label{eq:BallProjectile}
+\begin{split}
+     \vec{b}_{projectile} &= \langle x_0 - y_0 \omega t, y_0 + x_0 \omega t \rangle + \vec{v}_{init}t \\ 
+     &\textnormal{where } \vec{v}_{init} = \langle v_{y0},v_{x0} \rangle
+\end{split}
+\end{equation}
+
+Much of the same machinery used in the initial derivation in Method 1 can be used when considering projectile motion. Now it is just a matter of substituting $\vec{b}$ with $\vec{b}_{projectile}$. Equation \ref{eq:uV1} on page \pageref{eq:uV1} can now be rewritten as:
+
+\begin{equation}
+    \vec{p} = \vec{v}_{projectile} - \vec{m}
+\end{equation}
+
+Where $\vec{p}$ is the vector going from Miller to the projectile ball as seen from the onlooker outside the spaceship. Finally we apply a rotation matrix $Rot(-\theta(t))$ to $\vec{p}$ to obtain the path of the projectile ball as seen in Miller's frame.
+
+\begin{equation}\label{eq:ProjectileMillerFrame}
+\begin{split}
+    \vec{p}_m &= Rot(-\theta(t))\vec{p} \\
+    &= \langle (x_0 + t(v_{x0} - \omega y_0)) cos(\theta(t)) + (y_0 +t(v_{y0} + \omega x_0) sin(\theta(t)),\\
+    & cos(\theta(t)) (R cos(\theta(t)) + y_0 + t(v_{y0} + \omega x_0)) \\
+    &+ sin(\theta(t))(R sin(\theta(t)) + t(\omega y_0 - v_{x0})-x_0) \rangle
+\end{split}
+\end{equation}
+
+There is one subtlety that we must hit on before continuing. When dealing with projectile motion, the ball can have tangential velocity. Initially we defined tangential velocity to generally be $\omega r$, which was then used to define gravity as $g = \omega^2 r$.  However with the addition of some tangential velocity $v_{tang}$ the gravity for an object on the space ship with a given position and velocity is:
+\begin{equation}\label{eq:TangentGravity}
+\begin{split}
+    g_{tang} = \frac{(\omega R + v_tang)^2}{R}
+\end{split}
+\end{equation}
+
+\hrulefill %This is just to know where your work ends and my prior work begins
 
 Is depiction accurate? To approximate the path the drink will take from the perspective of Miller, we first have to see how Ceres, and therefore Miller, is moving. Afterwards, we can find the path of the drink, and then subtract its position function from Miller's position function to find the drink's path in his point of view. Miller's position function can be modeled by the parametric equation of a circle, \vec{p}, with a radius of $R$ and angular velocity $\omega$.
 
@@ -74,13 +320,13 @@ $\vec{n}(t)$ will track the path of the drink until it crosses the y-axis, at wh
 \end{bmatrix}
 \]
 
-Finding when the x-component of $\vec{d}(t) = 0$, we find that $t = \frac{\cos^{-1}(r/R)}{\omega} = 0.41239$ seconds, in the case given above. xSolving for the y-component at $t=0.41239$, we find $y = -1.713 \cdot 10^{-4}$, meaning that casually pouring a drink would only shift the stream less than a fifth of a millimeter from a similar pour on Earth, following a path that resembles the beginning of a cycloid.
+Finding when the x-component of $\vec{d}(t) = 0$, we find that $t = \frac{\cos^{-1}(r/R)}{\omega} = 0.41239$ seconds, in the case given above. solving for the y-component at $t=0.41239$, we find $y = -1.713 \cdot 10^{-4}$, meaning that casually pouring a drink would only shift the stream less than a fifth of a millimeter from a similar pour on Earth, following a path that resembles the beginning of a cycloid.
 
 These effects can be magnified at greater distances. For example, if something dropped from 10 meters, it would land about 4 centimeters off from its Earth landing position, and from 100 meters, it would be about 1.4 meters off. Whatever the case, the path of any falling object, be it a drink or Miller's hat, does not resemble the path made in The Expanse.
 
 \section{Explosions}
 
-In Epsiode 1, the \textit{Canterbury} is destroyed. 
+In Episode 1, the \textit{Canterbury} is destroyed. 
 The \textit{Knight} is then damaged by the wreckage. 
 Is this realistic?
 
@@ -105,7 +351,7 @@ The
 
 Ceres, a dwarf planet in the asteroid belt, has been spun up by Tycho Manufacturing to have a gravitational force of $0.3$g. How fast would Ceres need to spin?
 
-For any large rotating body, its gravity pulls objects toward its center, while the rotation of it counteracts gravity, pushing objects away. If the centrifugal force of the object is greater than its gravity, objects on the surface, and the surface itself, would fly off, tangent to the surface of the planet. To verify whether Ceres can maintain an internal artificial gravity of 0.3g, we can see if Cererian gravity is greater than the artificial gravity or note (Side note: If the artificial gravity was equal to the real gravity, anything on its surface would be weightless, as all of gravity is cancelled out by the centrifugal force). Cererian gravity can be found though the Newton's Law of Universal Gravitation,
+For any large rotating body, its gravity pulls objects toward its center, while the rotation of it counteracts gravity, pushing objects away. If the centrifugal force of the object is greater than its gravity, objects on the surface, and the surface itself, would fly off, tangent to the surface of the planet. To verify whether Ceres can maintain an internal artificial gravity of 0.3g, we can see if Cererian gravity is greater than the artificial gravity or note (Side note: If the artificial gravity was equal to the real gravity, anything on its surface would be weightless, as all of gravity is canceled out by the centrifugal force). Cererian gravity can be found though the Newton's Law of Universal Gravitation,
 \[
 g=\frac{GM}{R^2}
 \]
@@ -213,4 +459,11 @@ Finally, to find the maximum artificial gravity of the smaller Ceres, we just ne
     \item In episode 1 at 40:46, the low gravity environment is made apparent by a bird that seems to float. can you calculate the acceleration of the bird as it drops? Are there any split second counter examples of objects falling, such that their velocity is incomsistent with the bird falling?
     
 \end{enumerate}
-if the\end{document}
+if the
+
+
+
+\end{document}
+
+
+
