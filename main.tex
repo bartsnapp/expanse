@@ -42,7 +42,7 @@ gravity:
 
 %https://blogs-images.forbes.com/chadorzel/files/2016/01/output_wSTCkz.gif
 \[
-    \includegraphics[width=3in]{pour.png}
+    \includegraphics[natwidth = 300]{pour.png}
 \]
 Is the depiction accurate? In this paper, we seek to understand the
 nature of centripetal acceleration from a local view-point, as observer
@@ -61,24 +61,24 @@ intended). We will approach the problem in two different ways. The
 first method will take the viewpoint of an outside onlooker and use
 rotation of frames to determine how the ball will fall from Miller's
 perspective. In the second way, we will use the arclength of the ship
-to describe the x direction, while the distance from the ball to the
+to describe the $x$ direction, while the distance from the ball to the
 center of the ship, minus the ship radius itself describes the height
 of the ball.
 
 \subsection*{Method 1: Rotation of Frames}
 
-From the view of the onlooker, Miller simply rotates around the ship at some angular velocity $\omega$ from a starting angle of $\phi$ from the vertical. Given that the Radius of the ship is $R$, Miller's position can be given by:
+From the view of the onlooker, Miller simply rotates around the ship at some angular velocity $\omega$ from a starting angle of $\phi$ from the vertical and the radius of the ship is $R$, Miller's position can be given by:
 
 \begin{equation}\label{eq:MillerPosition}
-    \vec{m}=R\langle sin(\theta(t)),-cos(\theta (t)\rangle
+    \vec{m}=R\cdot \langle cos(\theta(t)),sin(\theta (t)\rangle
 \end{equation}
 
 Where $\theta (t)$ is given by:
 
-$$\theta (t) = \omega t + \phi$$
+$$\theta (t) = \omega t$$
 \[
-    \includegraphics[width=2.9in]{MillerZero.png}
-    \includegraphics[width=3in]{MillerDeltaT.png}
+    \includegraphics[natwidth = 300]{MillerZero.png}
+    \includegraphics[natwidth = 300]{MillerDeltaT.png}
 \]
 
 Meanwhile the ball starts out at some point on the ship: $$\vec{b} = \langle x_0,y_0\rangle $$ moving with an initial velocity:
@@ -87,7 +87,7 @@ Meanwhile the ball starts out at some point on the ship: $$\vec{b} = \langle x_0
 
  where $\omega$ is considered positive when rotating counterclockwise.
     \[
-    \includegraphics[width=3in]{WaterInitial.png}
+    \includegraphics[natwidth = 300]{WaterInitial.png}
     \]
  Thus the paths that the onlooker will see for Miller and the ball are
 \begin{equation}
@@ -99,7 +99,7 @@ Meanwhile the ball starts out at some point on the ship: $$\vec{b} = \langle x_0
 \end{equation}
 
 \[
-\includegraphics[width=3in]{MillerAndWater.png}
+\includegraphics[natwidth = 300]{MillerAndWater.png}
 \]
 
 Now we want to draw a vector from Miller to the ball to find the ball's relative position to Miller. This is just a matter of subtracting Miller's position from the ball's position. We will call this vector $\vec{u}$ where:
@@ -109,13 +109,13 @@ Now we want to draw a vector from Miller to the ball to find the ball's relative
 \end{equation}
 
 \[
-\includegraphics[width=3in]{MillerWaterU.png}
+\includegraphics[natwidth = 300]{MillerWaterU.png}
 \]
 
 As shown above, \vec{u} points from Miller to the ball, which is exactly what we want! The only issue is that the vector is still in the eyes of the observer. While the observer has been sitting still in space, Miller's definition of $x$ and $y$ direction has been constantly changing from the observer's perspective.
 
 \[
-\includegraphics[width=1.5in]{MillerAxes.png}   
+\includegraphics[natwidth = 300]{MillerAxes.png}   
 \]
 
 In order to view $\vec{u}$ from Miller's frame, we will have to rotate $\vec{u}$ by $-\theta(t)$. This is because in Miller's frame, the observer's world was initially rotated by $-\phi$ and then continued to rotate at $-\omega t$. By a given time $t$, Miller considers the world to have rotated by $-\phi - \omega t$, which just happens to be $-\theta (t)$. Thus, the path that Miller sees the ball take is given by:
@@ -150,7 +150,7 @@ The arclength between Miller and the ball is:
 Where $\gamma$ is the angle between Miller and the ball.
 
 \[
-\includegraphics[width=3in]{arclengthLabeled.png}
+\includegraphics[natwidth = 300]{arclengthLabeled.png}
 \]
 
 $\gamma$ can easily be found by using the dot product definition:
