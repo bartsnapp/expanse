@@ -41,9 +41,13 @@ the liquid appears to follow an interesting path due to the artificial
 gravity:
 
 %https://blogs-images.forbes.com/chadorzel/files/2016/01/output_wSTCkz.gif
-\[
-    \includegraphics[natwidth = 300]{pour.png}
-\]
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{pour}
+	\caption{}
+	\label{fig:pour}
+\end{figure}
+
 Is the depiction accurate? In this paper, we seek to understand the
 nature of centripetal acceleration from a local view-point, as observer
 who lives inside the rotating ring.
@@ -77,13 +81,13 @@ Where $\theta (t)$ is given by:
 
 $$\theta (t) = \omega t$$
 \[
-    \includegraphics[natwidth = 300]{MillerZero.png}
-    \includegraphics[natwidth = 300]{MillerDeltaT.png}
+    \includegraphics[width=.5\linewidth]{MillerZero.png}
+    \includegraphics[width=.5\linewidth]{MillerDeltaT.png}
 \]
 
 Meanwhile the ball starts out at some point on the ship: $$\vec{b} = \langle x_0,y_0\rangle $$ moving with an initial velocity:
 
-\[\vec{v}_0 = \vec{b}' = \omega \langle -y_0,x_0\rangle\]
+\[\vec{v}_0 = \vec{b}' = \frac{\omega}{2\pi} \langle -y_0,x_0\rangle\]
 
  where $\omega$ is considered positive when rotating counterclockwise.
     \[
@@ -109,16 +113,16 @@ Now we want to draw a vector from Miller to the ball to find the ball's relative
 \end{equation}
 
 \[
-\includegraphics[natwidth = 300]{MillerWaterU.png}
+\includegraphics[width=.7\linewidth]{MillerWaterU.png}
 \]
 
 As shown above, \vec{u} points from Miller to the ball, which is exactly what we want! The only issue is that the vector is still in the eyes of the observer. While the observer has been sitting still in space, Miller's definition of $x$ and $y$ direction has been constantly changing from the observer's perspective.
 
 \[
-\includegraphics[natwidth = 300]{MillerAxes.png}   
+\includegraphics[width=.7\linewidth]{MillerAxes.png}   
 \]
 
-In order to view $\vec{u}$ from Miller's frame, we will have to rotate $\vec{u}$ by $-\theta(t)$. This is because in Miller's frame, the observer's world was initially rotated by $-\phi$ and then continued to rotate at $-\omega t$. By a given time $t$, Miller considers the world to have rotated by $-\phi - \omega t$, which just happens to be $-\theta (t)$. Thus, the path that Miller sees the ball take is given by:
+In order to view $\vec{u}$ from Miller's frame, we will have to rotate $\vec{u}$ by $-\theta(t)$. This is because in Miller's frame, the observer's world rotates at an angular velocity of $-\omega$. At a given time $t$, Miller considers the world to have rotated by $- \omega t$, which just happens to be $-\theta (t)$. In order to 'rotate back' we apply a 2x2 rotation matrix $Rot(-\theta)$ to $\vec{u}$.Thus, the path that Miller sees the ball take is given by:
 \begin{equation}
 \begin{split}
         \vec{u}_m & = Rot(-\theta)\vec{u} \\
@@ -156,10 +160,10 @@ Where $\gamma$ is the angle between Miller and the ball.
 $\gamma$ can easily be found by using the dot product definition:
 \[\vec{m}\cdot\vec{b}= \lvert \vec{m} \rvert \lvert \vec{b} \rvert cos(\gamma)\]
 
-And taking the arcCosine so that $\gamma$ is:
+And taking the $\arccos$ so that $\gamma$ is:
 \begin{equation}
-\gamma  = arcCos(\frac{\vec{m}\cdot \vec{b}}{\lvert \vec{m} \rvert \lvert \vec{b} \rvert}) 
- = arcCos (\frac{\vec{m}\cdot \vec{b}}{rR})
+\gamma  = \arccos\left(\frac{\vec{m}\cdot \vec{b}}{\lvert \vec{m} \rvert \lvert \vec{b} \rvert}\right) 
+ = \arccos\left (\frac{\vec{m}\cdot \vec{b}}{rR}\right)
 \end{equation}
 
 Thus the equation of motion for the ball that Miller sees is:
@@ -170,7 +174,7 @@ Thus the equation of motion for the ball that Miller sees is:
 
 \subsection*{Comparison of Methods 1 and 2 to Real Gravity}
 
-Now that we've derived the equations of motion that a ball would take if dropped from the ship, we can compare their height as a function of time to the height of a ball if dropped on a planet where gravity is (approximately) constant. Our end goal is to determine what kind of situations give realistic gravity from Miller's point of view. The x components for each method are both non-zero as a function of time, which does not line up (pun intended) with a ball dropped on Earth. While this is important, we will not analyze the x component until the next section where we discuss projectile motion. 
+Now that we've derived the equations of motion that a ball would take if dropped from the ship, we can compare their height as a function of time to the height of a ball if dropped on a planet where gravity is (approximately) constant. Our end goal is to determine what kind of situations give realistic gravity from Miller's point of view. The $x$ components for each method are both non-zero as a function of time, which does not line up (pun intended) with a ball dropped on Earth. While this is important, we will not analyze the $x$ component until the next section where we discuss projectile motion. 
 
 The height of a ball dropped on a planet with gravity $g$ with a starting height of $h_0$ is given by:
 \begin{equation}
