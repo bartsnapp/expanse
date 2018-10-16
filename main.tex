@@ -40,10 +40,10 @@ discussed in science fiction. For example, in the television series
 the liquid appears to follow an interesting path due to the artificial
 gravity:
 
-%https://blogs-images.forbes.com/chadorzel/files/2016/01/output_wSTCkz.gif
+% https://blogs-images.forbes.com/chadorzel/files/2016/01/output_wSTCkz.gif
 \begin{figure}
 	\centering
-	\includegraphics[width=0.7\linewidth]{pour}
+	\includegraphics[width=0.7\linewidth]{pour.png}
 	\caption{}
 	\label{fig:pour}
 \end{figure}
@@ -57,7 +57,7 @@ who lives inside the rotating ring.
 
 When on a planet where the acceleration due to gravity is $g$, we know
 that an object thrown at an angle of $\theta$ from the horizontal at
-an inital speed of $v_0$, with an initial position of $(x_0,y_0)$
+an initial speed of $v_0$, with an initial position of $(x_0,y_0)$
 follows the path of:
 \begin{align*}
   x_{\mathrm{planet}}(t) &=  v_0 t \cos(\theta)  + x_0\\
@@ -68,7 +68,7 @@ after being thrown.
 
 [[GIVE A PLOT]]
 
-We seek analogus equations that show the path of a projectile on a
+We seek analogous equations that show the path of a projectile on a
 rotating space station. In particular, we wish to show the path from
 the view-point of people on the station.  From this perspective,
 \textit{vertical} is defined as the distance from the floor of the
@@ -82,13 +82,14 @@ Thus the equations of motion for a projectile ((seems a bit quick!))
 from the Ring World Inhabitant Perspective are:
 
 \begin{align*}
-  p_{r}(t) &=\\
-  p_{\theta R}(t) &=
+  p_{r}(t) &= t^2 (v_x + \omega r_0 Cos(\omega t_0))^2 + (t(v_y + \omega
+  r_0 Sin(\omega t_0) - R))^2\\
+  p_{\theta R}(t) &=R ArcTan(t(V_x + \omega r_0 Cos(\omega t_0)),tV_y +
+                    t \omega r_0 Sin(\omega t_0))
 \end{align*}
 
 
-
-Suppose an inhabitant of height $h$ de
+Suppose an inhabitant of height $h$ decides to water their garden. The flowers are of arclength $R\Delta\Theta$ away. 
 
 In order to find out, we will need to solve for the equations of
 motion for free falling objects in Miller's frame. In particular we
