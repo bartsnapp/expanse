@@ -1,6 +1,7 @@
 \documentclass{amsart}
 
 \usepackage{graphicx}
+
 \usepackage{amsmath}
 \renewcommand{\vec}{\textbf}
 
@@ -19,12 +20,19 @@ In science fiction, artificial gravity for space-craft and
 space-stations is often generated via centripetal acceleration, see
 \cite{2001,2010,missiontomars,themartian,expanse,babylon5,europareport,ringworld?,rama,intersetller,etc}
 for an incomplete list. Usually characters live inside a cylinder that
-is spinning.
+is spinning, such as the von Braun Wheel depicted in figure
+\ref{fig:Braun Wheel}.
 
-IMAGE
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.5\textwidth]{Von_Braun_1952_Space_Station.jpg}
+  %wikipedia von Braun Wheel
+  \caption{von Braun Wheel}
+  \label{fig:Braun Wheel}
+\end{figure}
 
 Centripetal acceleration pushes them against the outside wall of the
-cylinder.  In television and film, (surely due to production
+cylinder. In television and film, (surely due to production
 limitations) this ``artificial gravity'' is portrayed as being an
 excellent facsimile for Earth's gravity. In this paper we seek to
 answer the question of how accurately centripetal acceleration mimics
@@ -44,7 +52,7 @@ gravity:
 \begin{figure}
 	\centering
 	\includegraphics[width=0.7\linewidth]{pour.png}
-	\caption{}
+	\caption{Pouring Liquid in Artificial Gravity (Science Fiction)}
 	\label{fig:pour}
 \end{figure}
 
@@ -66,7 +74,7 @@ follows the path of:
 These equations of projectile motion describe the path an object takes
 after being thrown.
 
-[[GIVE A PLOT]]
+[[IMAGE]]
 
 We seek analogous equations that show the path of a projectile on a
 rotating space station. In particular, we wish to show the path from
@@ -87,6 +95,29 @@ from the Ring World Inhabitant Perspective are:
   p_{\theta R}(t) &=R ArcTan(t(V_x + \omega r_0 Cos(\omega t_0)),tV_y +
                     t \omega r_0 Sin(\omega t_0))
 \end{align*}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.7\textwidth]{ArclengthProjectileLabeled.jpg}
+  \label{fig:shipview}
+  \caption{}
+\end{figure}
+
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.7\textwidth]{InertialArclengthProjectileLabeled.jpg}
+  \label{fig:inertialview}
+  \caption{}
+\end{figure}
+
+Figure \ref{fig:shipview} depicts projectile motion (a ball thrown at
+45 degrees) using the Ring World equations of motion above. Note that
+figure \ref{fig:inertialview} depicts the same throw event in figure
+\ref{fig:inertialview}, except from the outside inertial
+perspective. Something interesting to note is that from the outside
+perspective,the ball is not being thrown at a 45 degree angle with
+repect to the thrower's horixontal axis (I wonder why that is).
 
 
 Suppose an inhabitant of height $h$ decides to water their garden. The flowers are of arclength $R\Delta\Theta$ away. 
