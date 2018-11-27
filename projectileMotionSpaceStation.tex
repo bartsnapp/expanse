@@ -1,7 +1,7 @@
 \documentclass{amsart}
 
 \usepackage{graphicx}
-
+\usepackage{textcomp}
 \usepackage{amsmath}
 \usepackage{amsthm}
 
@@ -18,6 +18,7 @@
 
 \maketitle
 
+%This is the introduction
 \section{Artificial gravity}
 
 In science fiction, artificial gravity for space-craft and
@@ -43,26 +44,22 @@ answer the question of how accurately centripetal acceleration mimics
 gravitational acceleration.
 
 
+% Papers that did similar things to ours
+% http://davidkann.blogspot.com/2014/06/oneill-cylinder-simulator-projectile.html (Build a simulator)
+% https://kaiserscience.wordpress.com/physics/rotational-motion/artificial-gravity-in-a-space-station/
+
+
+
 While centripetal acceleration (on cylindrical space-craft etc.) has
-been extensively studied \cite{papers,anotherpaper}, all of these
-studies discuss the problem from a global view-point. Sometimes the
-differences between Earth's gravity and the artificial gravity are
-discussed in science fiction. For example, in the television series
-\textit{The Expanse}, there is a scene, where a drink is poured and
-the liquid appears to follow an interesting path due to the artificial
-gravity:
-
-% https://blogs-images.forbes.com/chadorzel/files/2016/01/output_wSTCkz.gif
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{pour.png}
-	\caption{Pouring Liquid in Artificial Gravity (Science Fiction)}
-	\label{fig:pour}
-\end{figure}
-
-Is the depiction accurate? In this paper, we seek to understand the
-nature of centripetal acceleration from a local view-point, as observer
-who lives inside the rotating ring.
+been extensively studied \cite{papers,anotherpaper}, most of these
+studies focus on the fictitious forces present on a space stateion and
+the basic consiquences these have on the equations for projectile
+motion. In this paper we seek to expand on these papers and flush out projectile motion on
+spaceship with centripital acceleration. Ultimately we should become
+comfortable with projectile motion and we should provide some basic
+answers to questions like: What is the maximum height of a projectile?
+At what point does a projectile ``loop'' around? How might one play a
+game of catch on a ship with centripital acceleration?
 
 \subsection{Projectile Motion from Ring World Inhabitant Perspective}
 
@@ -78,7 +75,13 @@ follows the path of:
 These equations of projectile motion describe the path an object takes
 after being thrown.
 
-[[IMAGE]]
+%Generic gravity Projectile motion plot
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.5\textwidth]{Projectile_In_Gravity.png}
+  \caption{Projectile thrown in standard gravity takes the path of a parabola.}
+  \label{fig:Braun Wheel}
+\end{figure}
 
 We seek analogous equations that show the path of a projectile on a
 rotating space station. In particular, we wish to show the path from
@@ -122,6 +125,18 @@ figure \ref{fig:inertialview} depicts the same throw event in figure
 perspective. Something interesting to note is that from the outside
 perspective,the ball is not being thrown at a 45 degree angle with
 respect to the thrower's horizontal axis (I wonder why that is).
+
+
+\section{Acrobatics}
+
+
+
+\begin{theorem}
+  Given a space station of radius $r$ and angluar velocity $\omega$, the maximum height that can be thrown with realistic behavior is....
+\end{theorem}
+
+
+
 
 
 Suppose an inhabitant of height $h$ decides to water their garden. The flowers are of arclength $R\Delta\Theta$ away. 
@@ -546,18 +561,6 @@ Next, we need to find the mass of the smaller Ceres. We'll assume that Ceres is 
 \end{align*}
 
 Finally, to find the maximum artificial gravity of the smaller Ceres, we just need to find the surface gravity of it, which would be \(\frac{GM_{new}}{r_{new}^2}=\frac{6.67*10^{-11}*2.24*10^{17}}{(29316)^2} = 0.017\frac{m}{s^2} = 0.0018g\), falling short of the 0.3g goal by quite a large amount.
-
-
-
-
-\section{Acrobatics}
-
-
-
-\begin{theorem}
-  Given a space station of radius $r$ and angluar velocity $\omega$, the maximum height that can be thrown with realistic behavior is....
-\end{theorem}
-
 
 
 
