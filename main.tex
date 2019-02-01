@@ -67,13 +67,26 @@ who lives inside the rotating ring.
 \subsection{Projectile Motion from Ring World Inhabitant Perspective}
 
 
-When on a planet where the acceleration due to gravity is $g$, we know
-that an object thrown at an angle of $\theta$ from the horizontal at
-an initial speed of $v_0$, with an initial position of $(x_0,y_0)$
-follows the path of:
+When on a planet, we assume that the acceleration due to gravity is a
+constant, call it $g$. Letting
+$(x_{\mathrm{planet}},y_{\mathrm{planet}})$ denote the position
+of a projectile thrown at an angle of $\theta$ from the horizontal, we
+set
 \begin{align*}
-  x_{\mathrm{planet}}(t) &=  v_0 t \cos(\theta)  + x_0\\
-  y_{\mathrm{planet}}(t) &=  -g/2 t^2 + v_0 t \sin(\theta)  + y_0
+  x''_{\mathrm{planet}}(t) &= 0,\\
+  y''_{\mathrm{planet}}(t) &= -g.
+\end{align*}
+Antidifferentiating, and letting $v_0$ be the magnitude of the initial
+velocity of the projectile, we find
+\begin{align*}
+  x'_{\mathrm{planet}}(t) &= v_0 \cos(\theta),\\
+  y'_{\mathrm{planet}}(t) &= -g t  + v_0 \sin(\theta).
+\end{align*}
+Antidifferentating once more, and letting $(x_0,y_0)$ be the
+inital position of the projectile, we find
+\begin{align*}
+  x_{\mathrm{planet}}(t) &=  v_0 t \cos(\theta)  + x_0,\\
+  y_{\mathrm{planet}}(t) &=  -g/2 t^2 + v_0 t \sin(\theta)  + y_0.
 \end{align*}
 These equations of projectile motion describe the path an object takes
 after being thrown.
@@ -94,10 +107,10 @@ Thus the equations of motion for a projectile ((seems a bit quick!))
 from the Ring World Inhabitant Perspective are:
 
 \begin{align*}
-  p_{r}(t) &= t^2 (v_x + \omega r_0 Cos(\omega t_0))^2 + (t(v_y + \omega
-  r_0 Sin(\omega t_0) - R))^2\\
-  p_{\theta R}(t) &=R ArcTan(t(V_x + \omega r_0 Cos(\omega t_0)),tV_y +
-                    t \omega r_0 Sin(\omega t_0))
+  p_{r}(t) &= t^2 (v_x + \omega r_0 \cos(\omega t_0))^2 + (t(v_y + \omega
+  r_0 \sin(\omega t_0) - R))^2\\
+  p_{\theta R}(t) &=R \arctan(t(V_x + \omega r_0 \cos(\omega t_0)),tV_y +
+                    t \omega r_0 \sin(\omega t_0))
 \end{align*}
 
 \begin{figure}[h]
