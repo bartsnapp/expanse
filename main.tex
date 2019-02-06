@@ -153,68 +153,6 @@ to describe the $x$ direction, while the distance from the ball to the
 center of the ship, minus the ship radius itself describes the height
 of the ball.
 
-\subsection*{Method 1: Rotation of Frames}
-
-From the view of the onlooker, Miller simply rotates around the ship at some angular velocity $\omega$ from a starting angle of $\phi$ from the vertical and the radius of the ship is $R$, Miller's position can be given by:
-
-\begin{equation}\label{eq:MillerPosition}
-    \vec{m}=R\cdot \langle cos(\theta(t)),sin(\theta (t)\rangle
-\end{equation}
-
-Where $\theta (t)$ is given by:
-
-$$\theta (t) = \omega t$$
-\[
-    \includegraphics[width=.5\linewidth]{MillerZero.png}
-    \includegraphics[width=.5\linewidth]{MillerDeltaT.png}
-\]
-
-Meanwhile the ball starts out at some point on the ship: $$\vec{b} = \langle x_0,y_0\rangle $$ moving with an initial velocity:
-
-\[\vec{v}_0 = \vec{b}' = \frac{\omega}{2\pi} \langle -y_0,x_0\rangle\]
-
- where $\omega$ is considered positive when rotating counterclockwise.
-    \[
-    \includegraphics[natwidth = 300]{WaterInitial.png}
-    \]
- Thus the paths that the onlooker will see for Miller and the ball are
-\begin{equation}
-\vec{m}=R\langle \sin(\theta(t)),-\cos(\theta (t)\rangle
-\end{equation}
-
-\begin{equation}\label{eq:BallV1}
-\vec{b} = \langle x_0 - y_0 \omega t, y_0 + x_0 \omega t \rangle
-\end{equation}
-
-\[
-\includegraphics[natwidth = 300]{MillerAndWater.png}
-\]
-
-Now we want to draw a vector from Miller to the ball to find the ball's relative position to Miller. This is just a matter of subtracting Miller's position from the ball's position. We will call this vector $\vec{u}$ where:
-
-\begin{equation}
-    \vec{u}=\vec{b}-\vec{m}
-\end{equation}
-
-\[
-\includegraphics[width=.7\linewidth]{MillerWaterU.png}
-\]
-
-As shown above, \vec{u} points from Miller to the ball, which is exactly what we want! The only issue is that the vector is still in the eyes of the observer. While the observer has been sitting still in space, Miller's definition of $x$ and $y$ direction has been constantly changing from the observer's perspective.
-
-\[
-\includegraphics[width=.7\linewidth]{MillerAxes.png}   
-\]
-
-In order to view $\vec{u}$ from Miller's frame, we will have to rotate $\vec{u}$ by $-\theta(t)$. This is because in Miller's frame, the observer's world rotates at an angular velocity of $-\omega$. At a given time $t$, Miller considers the world to have rotated by $- \omega t$, which just happens to be $-\theta (t)$. In order to 'rotate back' we apply a 2x2 rotation matrix $Rot(-\theta)$ to $\vec{u}$.Thus, the path that Miller sees the ball take is given by:
-\begin{equation}
-\begin{split}
-        \vec{u}_m & = Rot(-\theta)\vec{u} \\
-        &= \langle (x_0 - \omega t y_0) cos(\theta(t)) + (y_0 + \omega t x0 )sin(\theta (t), \\
-        &R+(\omega t x_0 + y_0)cos(\theta(t))+(\omega t y_0 - x_0)sin(\theta (t)) \rangle    
-\end{split}
-\end{equation}
-
 \subsection*{Method 2: Arclength and Radius}
 In the second method we immediately take the viewpoint of Miller. We consider the arclength between Miller and the ball to be the displacement in the x direction, while the ball's height above the ship floor to be the displacement in the y direction. We'll define the height of the ball above the ship floor as:
 
@@ -256,7 +194,7 @@ Thus the equation of motion for the ball that Miller sees is:
     \vec{u}_{arc} = \langle R cos(\gamma), h \rangle
 \end{equation}
 
-\subsection*{Comparison of Methods 1 and 2 to Real Gravity}
+\subsection*{Comparison to Real Gravity}
 
 Now that we've derived the equations of motion that a ball would take
 if dropped from the ship, we can compare their height as a function of
@@ -329,7 +267,7 @@ artificial gravity as:
 \end{split}
 \end{equation}
 
-From the Taylor series expansion We also find that $h_{approx}(t)$ is approximate to real gravity when $r_0 \approx R$! Assuming Miller drops objects (such as pouring water) from eye level, we can now investigate what is "good" artificial gravity. In particular we want to investigate a `Just Noticeable Difference' for objects poured over a distance of 1 meter. According to Weber's law
+From the Taylor series expansion We also find that $h_{approx}(t)$ is approximate to real gravity when $r_0 \approx R$! Assuming Miller drops objects (such as pouring water) from eye level, we can now investigate what is ``good" artificial gravity. In particular we want to investigate a `Just Noticeable Difference' for objects poured over a distance of 1 meter. According to Weber's law
 
 Making the substitution  and $x_0 =0$ yields an identical 0th and 1st order terms to both $h_{rot}(t)$ and $h_{arc}(t)$. $h_{rot}(t)$ and $h_{arc}(t)$ differ at the 3rd order term for non-zero , but since $x_0$ is zero,  and a near identical 0th and first order term for  when $r_0 \approx R$! 
 
