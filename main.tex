@@ -2,6 +2,7 @@
 
 \usepackage{graphicx}
 
+
 \usepackage{amsmath}
 \usepackage{amsthm}
 
@@ -42,27 +43,80 @@ excellent facsimile for Earth's gravity. In this paper we seek to
 answer the question of how accurately centripetal acceleration mimics
 gravitational acceleration.
 
+%papers
+% https://kaiserscience.wordpress.com/physics/rotational-motion/artificial-gravity-in-a-space-station/ (good overview)
+% Throwing a ball in a rotating space station http://physics.stackexchange.com/questions/149080/throwing-a-ball-in-a-rotating-space-station
+% Would you be able to tell the difference between centrifugal force and normal gravity? https://www.askamathematician.com/2009/11/q-if-you-were-on-a-space-station-would-you-be-able-to-tell-the-difference-between-centrifugal-force-and-normal-gravity/
+% Gravity in the Elysium Space Station – Rhett Allain http://www.wired.com/2013/05/gravity-in-the-elysium-space-station/
+%http://www.bogan.ca/physics/coriolis.html
+%Artificial Gravity in Spacecraft by Ron Kurtus http://www.school-for-champions.com/science/gravity_artificial.htm#.VhZ0um6VRZQ
 
-While centripetal acceleration (on cylindrical space-craft etc.) has
+While centripetal acceleration (on cylindrical space-craft etc.) have
 been extensively studied \cite{papers,anotherpaper}, all of these
-studies discuss the problem from a global view-point. Sometimes the
-differences between Earth's gravity and the artificial gravity are
-discussed in science fiction. For example, in the television series
-\textit{The Expanse}, there is a scene, where a drink is poured and
-the liquid appears to follow an interesting path due to the artificial
-gravity:
+studies focus on how gravity arises on these ships and/or how projectiles on 
+a rotating ship behave through "fictitious forces."
 
-% https://blogs-images.forbes.com/chadorzel/files/2016/01/output_wSTCkz.gif
+\newline
+
+In this paper, we seek to develope a toolset to describe motion and space that an observer
+ who lives inside a rotating ring would use. First we develope a coordinate system for a ring world. 
+ Then we determine the various thresholds for projectile \textit{acrobatics} on a ring world. 
+
+\newpage
+\subsection*{{Describing the position of projectiles on a ring world}}
+
 \begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{pour.png}
-	\caption{Pouring Liquid in Artificial Gravity (Science Fiction)}
-	\label{fig:pour}
+  \centering
+	\includegraphics[width=0.7\linewidth]{figures/height_fig_rough.JPG}
+	\caption{Defining the height ($y$) coordinate in the ring world.}
+	\label{fig:vertical}
 \end{figure}
 
-Is the depiction accurate? In this paper, we seek to understand the
-nature of centripetal acceleration from a local view-point, as observer
-who lives inside the rotating ring.
+For the duration of this paper, the $y$ coordinate is the height above the ground in the ring world.
+The $x$ coordinate represents horizontal position on the ring world. 
+The height is rather straight forward. It is given by:
+
+
+\[h = R - r\]
+
+Where $r$ is the distance from the center of the ship. This gives us our first theorm for the ring world which is:
+\begin{theorem}
+  For a 2-D ring world of radius $R$, the maximum height is $R$.
+\end{theorem}
+
+While height is well defined, we still must settle on what is meant by the $x$ coordinate of the ring world. 
+for instance, in figure \ref{fig:what_is_x} has looped around the circumference and now lands in front of the observer some arc length $x$.
+Is the ball at $2\pi R + x$ or is it simply at $x$? Also what if the ball landed some distance $x$ \textit{behind} the observer?
+Would the ball be at at $2\pi R - x$ or $-x$? \newline 
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{figures/define_horizontal_pos_rough.JPG}
+	\caption{A ball can talk many paths only to end up right in front of you.}
+	\label{fig:what_is_x}
+\end{figure}
+
+We can gain some intuition by considering relative distances on earth, which is a sphere. On earth the point where front and back get muddled
+ are when we consider objects at the opposite end of the planet. Intuatively though, an object that is closer in the forwards direction \textit{in front.} 
+ An object that is closer in the backwards direction is \textit{behind.} \newline
+
+Extending this to the ring world case, anything that is closer to the observer in the backward direction is negative and and everything 
+else is positive as shown in figure \ref{fig:neg_positive_horizontal}
+
+
+
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{figures/define_neg_pos_rough.JPG}
+	\caption{Region in blue is negative, region in red is positive.}
+	\label{fig:neg_positive_horizontal}
+\end{figure}
+
+This gives us our second theorem which is: \newline 
+\begin{theorem}
+  For a 2-D ring world of radius $R$, the farthest an object may be from any other object is $\pi R$.
+\end{theorem}
 
 \subsection{Projectile Motion from Ring World Inhabitant Perspective}
 
@@ -159,50 +213,6 @@ to describe the $x$ direction, while the distance from the ball to the
 center of the ship, minus the ship radius itself describes the height
 of the ball.
 
-\subsection*{Method 2: Arclength and Radius}
-In the second method we immediately take the viewpoint of Miller. We consider the arclength between Miller and the ball to be the displacement in the x direction, while the ball's height above the ship floor to be the displacement in the y direction. We'll define the height of the ball above the ship floor as:
-
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{figures/height_fig_rough.JPG}
-	\caption{Defining the height ($y$) coordinate in the ring world.}
-	\label{fig:vertical}
-\end{figure}
-
-
-
-\[h = R - r\]
-
-Where $r$ is the ball's distance from the center of the ship. $r$ as a function of time is given as:
-
-While height is well defined, we still must settle on what is meant by the $x$ coordinate of the ring world. 
-for instance, in figure \ref{fig:what_is_x} has looped around the circumference and now lands in front of the observer some arc length $x$.
-Is the ball at $2\pi R + x$ or is it simply at $x$? Also what if the ball landed some distance $x$ \textit{behind} the observer?
-Would the ball be at at $2\pi R - x$ or $-x$? \newline \newline
-
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{figures/define_horizontal_pos_rough.JPG}
-	\caption{A ball can talk many paths only to end up right in front of you.}
-	\label{fig:what_is_x}
-\end{figure}
-
-We can gain some intuition by considering relative distances on earth, which is a sphere. On earth the point where front and back get muddled
- are when we consider objects at the opposite end of the planet. Intuatively though, an object that is closer in the forwards direction \textit{in front.} 
- An object that is closer in the backwards direction is \textit{behind.} \newline
-
-Extending this to the ring world case, anything that is closer to the observer in the backward direction is negative and and everything 
-else is positive as shown in figure \ref{fig:neg_positive_horizontal}
-
-
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{figures/define_neg_pos_rough.JPG}
-	\caption{Region in blue is negative, region in red is positive.}
-	\label{fig:neg_positive_horizontal}
-\end{figure}
-
-
 \begin{equation}
 \begin{split}
     r &= \lvert \vec{b} \rvert \\
@@ -236,6 +246,9 @@ Thus the equation of motion for the ball that Miller sees is:
 \begin{equation}\label{eq:uV1}
     \vec{u}_{arc} = \langle R cos(\gamma), h \rangle
 \end{equation}
+
+
+
 
 \subsection*{Comparison to Real Gravity}
 
