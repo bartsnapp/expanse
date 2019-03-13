@@ -59,8 +59,8 @@ studies focus on how gravity arises on these ships and/or how projectiles on
 a rotating ship behave through ``fictitious forces.''
 
 
-In this paper, we seek to develope a toolset to describe motion and space that an observer
- who lives inside a rotating ring would use. First we develope a coordinate system for a ring world. 
+In this paper, we seek to develop a tool-set to describe motion and space that an observer
+ who lives inside a rotating ring would use. First we develop a coordinate system for a ring world. 
  Then we determine the various thresholds for projectile \textit{acrobatics} on a ring world. 
 
 
@@ -69,9 +69,12 @@ In this paper, we seek to develope a toolset to describe motion and space that a
 In this paper, we are modeling the motion of projectiles in a ring
 world, as seen by the inhabitants of the ring world. These inhabitants
 will view their world as being ``flat'' and hence, we will work in
-$(x,y)$-coordiantes.  The $y$-coordinate is the height above the
+$(x,y)$-coordinates.  The $y$-coordinate is the height above the
 ground in the ring world.  The $x$-coordinate represents horizontal
-position on the ring world.  
+position on the ring world, and the $y$-coordinate will be given by $R
+- r$, where $R$ is the radius of the ring world and $r$ is the
+distance from the center of the ship to an object measure along a
+radius, see Figure~\ref{fig:vertical}.
 
 %% \begin{figure}
 %% 	\includegraphics[width=0.7\linewidth]{figures/height_fig_rough.JPG}
@@ -94,22 +97,24 @@ position on the ring world.
     \node[below left] at (.86,2.5) {$r$};
     \node at (1.73,1.96) {\faSoccerBallO};
   \end{tikzpicture}
-  \caption{Defining $x$ and $y$-coordiantes in a ring world.}
+  \caption{Defining $x$ and $y$-coordinates in a ring world.}
   \label{fig:vertical}
 \end{figure}
 
+Defending this choice of coordinates, we point to the fact that local
+distances on the Earth are considered in exactly the same way. 
 
-The height is given by
-\[
-h = R - r,
-\]
-where $r$ is the distance from the center of the ship to an object
-measure along a radius. This gives us our first theorm for the ring
-world which is:
 
-\begin{theorem}
-  For a 2-D ring world of radius $R$, the maximum height is $R$.
-\end{theorem}
+We can gain some intuition by considering relative distances
+on earth, which is a sphere. On earth the point where front and back
+get muddled are when we consider objects at the opposite end of the
+planet. Intuitively though, an object that is closer in the forwards
+direction \textit{in front.}  An object that is closer in the
+backwards direction is \textit{behind.} \newline
+
+
+
+We will define the 
 
 While height is well defined, we still must settle on what is meant by
 the $x$-coordinate of the ring world.  for instance, in figure
@@ -126,9 +131,6 @@ $2\pi R - x$ or $-x$? \newline
 	\label{fig:what_is_x}
 \end{figure}
 
-We can gain some intuition by considering relative distances on earth, which is a sphere. On earth the point where front and back get muddled
- are when we consider objects at the opposite end of the planet. Intuatively though, an object that is closer in the forwards direction \textit{in front.} 
- An object that is closer in the backwards direction is \textit{behind.} \newline
 
 Extending this to the ring world case, anything that is closer to the observer in the backward direction is negative and and everything 
 else is positive as shown in figure \ref{fig:neg_positive_horizontal}
@@ -167,7 +169,7 @@ velocity of the projectile, we find
   y'_{\mathrm{planet}}(t) &= -g t  + v_0 \sin(\theta).
 \end{align*}
 Antidifferentating once more, and letting $(x_0,y_0)$ be the
-inital position of the projectile, we find
+initial position of the projectile, we find
 \begin{align*}
   x_{\mathrm{planet}}(t) &=  v_0 t \cos(\theta)  + x_0,\\
   y_{\mathrm{planet}}(t) &=  -g/2 t^2 + v_0 t \sin(\theta)  + y_0.
