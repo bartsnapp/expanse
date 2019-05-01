@@ -300,6 +300,30 @@ Thus the equation of motion for the ball that Miller sees is:
 \end{equation}
 
 
+%-----NEW DERIVATION ---------%
+
+Let $<r_0, \theta_{0}>$ be the initial polar coordinates of the projectile.
+Let $w$ be the angular velocity of the ship in radians per second.
+Let $R$ be the radius of the ship.
+Let $\theta_t$ be the angle that the projectile was thrown with respect to the thrower and let $V_0$ be the velocity in which it was thrown with respect to the thrower. 
+Assume $\theta = -\frac{\pi}{2}$ so that the thrower is in the ship underbelly. Then we find:
+\begin{align*}
+	\vec{r_0} &= r_0<Cos(\theta_{0}),Sin(\theta_{0})> = <0,-r_0>\\\
+	\vec{v_0} &= V_0<Cos(\theta_{t} + \frac{\pi}{2} + \theta_{0}),Sin(\theta{t} +\frac{\pi}{2} + \theta_0)> + 
+	\dot{\vec{r_0}}\\
+	&= V_0<Cos(\theta_{t}),Sin(\theta_t)> + r_0<-wSin(\theta_0),wCos(\theta_0)>\\
+	&= V_0<Cos(\theta_{t}),Sin(\theta_t)> + r_0w <1,0>
+\end{align*}
+
+Now let $\alpha$ be the angle in radians between the thrower and the projectile. We subtract $wt$ since the thrower is constantly rotating at $w$.
+
+\begin{align*}
+	\vec{p} &= \vec{r_0}+\vec{v_0}t\\
+	\alpha &= -wt + ATan2( \vec{p}\cdot<1,0>, \vec{p}\cdot<0,1>)
+\end{align*}
+Thus the coordinates of the projectile are:
+\[ <x,y> = <R\alpha, R- \sqrt{\vec{p}\cdot \vec{p}}>\]
+
 
 
 \subsection*{Comparison to Real Gravity}
